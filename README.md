@@ -48,4 +48,33 @@ def show_menu()
 
 def view_inventory()
     print("\n--- current inventory---")
+def sell_item( ):
+    global  sales_today, cash_in_till
+
+    view_inventory()
+    item = input("Enter item name to: ").lower()
+    if item not in invetory:
+        print("item not found!")
+        return
+
+    try:
+         qty = int(input("Enter  quantity:
+    except  ValueError:
+        print(f"Not  enough stock! Only {inventory[item]['qty']} left")
+        return
+
+    if inventory[item]["qty"] < qty:
+        print(f"Not enough stock! Only  {invetory[item]['qty']} left")
+
+    price = inventory[item]["price"]
+    total = price *  qty
+
+    #update data
+    invetory[item]["qty]  -= qty
+    sales_today  += total
+    cash_in_till  + total
+
+    
+    
+     
 
